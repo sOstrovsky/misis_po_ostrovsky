@@ -1,24 +1,26 @@
+import random
+
 from app.notesList import NotesList
 from app.note import Note
 
 if __name__ == "__main__":
     notes = NotesList()
+    idx = 1
     while True:
-        title = input('Введите название заметки: ')
-        description = input('Введите соджержимое заметки: ')
-        priority = int(input('Укажите приоритет (от 1 до 5): '))
+        title = f'Note {idx}'
+        description = f'Some description for \'{title}\''
+        priority = random.choice([1, 2, 3, 4, 5])
         notes.add_note(Note(title, description, priority))
-        more = input(
-            'Нажмите \'return\' для того чтобы ввести еще одну заметку. \nДля выхода из режима добавленгия заметок введите \'stop\'')
-        if more == 'stop':
+        idx += 1
+        if idx == 5:
             break
 
-    print('Ваши заметки:')
+    print('\nВаши заметки:')
     for note in notes.get_notes():
         print(note)
 
     notes.remove_note('Note 1')
 
-    print('Ваши заметки:')
+    print('\nВаши заметки:')
     for note in notes.get_notes():
         print(note)
