@@ -1,5 +1,5 @@
 FROM python:3.11
 
-COPY ./ ./
+COPY . .
 
-CMD ["python3", "main.py"]
+CMD ["python3", "/app/main.py"]
