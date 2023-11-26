@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+.App {
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-color: #a3b9ad;
+    padding-top: 60px;
+}
+
+.App-header {
+    position: fixed;
+    background-color: #a3b9ad;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 0 5px #fff;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 40px;
+    z-index: 9999;
+}
+
+.App-header > h2 {
+    color: white;
+    margin: 0;
+}
+
+.App-body {
+    color: white;
+    padding: 40px;
+}
+
+.Button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 0 20px;
+}
+
+.NewNote-button {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Modal-component {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.Empty-wrapper {
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

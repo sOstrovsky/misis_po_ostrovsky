@@ -1,0 +1,25 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - '3000:3000'
+  backend:
+    build: ./backend
+    env_file:
+      - backend/.env
+    ports:
+      - '8000:8000'
+    depends_on:
+      - database
+  database:
+    image: postgres:latest
+    restart: always
+    env_file:
+      - backend/.env
+    volumes:
+      - notes_db:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+volumes:
+  notes_db:
